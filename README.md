@@ -5,7 +5,7 @@ Open on IntelliJ IDE, Enter the Main.java file, just enter the method name the d
 
 The design patterns you will curreny find in the repository are:
 
-Behavioral: Observer, Strategy, Visitor, TemplateMehod.
+Behavioral: Observer, Strategy, Visitor, TemplateMethod.
 
 Creational:
 AbstractFactory, Factory, Builder, Singleton.
