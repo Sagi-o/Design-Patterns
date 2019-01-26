@@ -11,6 +11,6 @@ Creational:
 AbstractFactory, Factory, Builder, Singleton.
 
 Structural:
-Adapter, Composite, Flywhight, Proxy.
+Adapter, Composite, Flywheight, Proxy.
 
 All implemented with Java.
