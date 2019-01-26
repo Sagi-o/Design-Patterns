@@ -25,7 +25,9 @@ import Structural.Proxy.Executor;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-
+        // Enter the design pattern you want to test:
+        StrategyPattern();
+        // ObserverPattern();
     }
 
     // Creational Patterns
