@@ -1,5 +1,6 @@
 import Behavioral.Observer.Subscriber;
 import Behavioral.Observer.Topic;
+import Behavioral.ProducerConsumer.Processor;
 import Behavioral.Strategy.*;
 import Behavioral.TemplateMethod.GlassHouse;
 import Behavioral.TemplateMethod.WoodenHouse;
@@ -26,8 +27,7 @@ import Structural.Proxy.Executor;
 public class Main {
     public static void main(String[] args) throws Exception {
         // Enter the design pattern you want to test:
-        StrategyPattern();
-        // ObserverPattern();
+        ProducerConsumerPattern();
     }
 
     // Creational Patterns
@@ -171,5 +171,31 @@ public class Main {
         // "Paying" using Interfaces Polymorphism. Paypal and CreditCard implements the PaymentStrategy interface
         cart.pay(Paypal);
         cart2.pay(CreditCard);
+    }
+
+    static private void ProducerConsumerPattern() throws InterruptedException {
+        final Processor processor = new Processor();
+
+        Thread t1 = new Thread(() -> {
+            try {
+                processor.produce();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+        Thread t2 = new Thread(() -> {
+            try {
+                processor.consume();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+        t1.start();
+        t2.start();
+
+        t1.join();
+        t2.join();
     }
 }
